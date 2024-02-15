@@ -1,0 +1,66 @@
+<body>
+    <div class="Formulaire">
+        <h1>Formulaire </h1>
+        <div class="row">
+            <p>Nom</p>
+            <input [(ngModel)] = "nom" pattern="[A-Za-z]+" placeholder="Nom" required>
+        </div>
+        <div class="row">
+            <p>Prénom </p>
+            <input [(ngModel)] = "prenom" pattern="[A-Za-z]+" placeholder="Prenom" required>
+        </div>  
+        <div class="row">
+            <p>Civilité</p> 
+            <select id="civilite" [(ngModel)]="civilite" name="civilite" placeholder="Civilité" class="surface-input" required>
+                <option value="Monsieur">Monsieur</option>
+                <option value="Madame">Madame</option>
+                <option value="Autre">Autre</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>Adresse </p>
+            <input [(ngModel)] = "adresse" placeholder="Adresse" required>
+        </div>  
+        <div class="row">
+            <p>Code postale</p>
+            <input [(ngModel)] = "cp" pattern="\d+" placeholder="Code postale" required>
+        </div>  
+        <div class="row">
+            <p>Ville</p>
+            <input [(ngModel)] = "ville" placeholder="Ville" required>
+        </div>  
+        <div class="row">
+            <p>Pays</p>
+            <input [(ngModel)] = "pays" placeholder="Pays" required>
+        </div>  
+        <div class="row">
+            <p>Téléphone</p>
+            <input [(ngModel)] = "tel" pattern="\d+" placeholder="Téléphone" required>
+        </div>  
+        <div class="row">
+            <p>Email</p>
+            <input [(ngModel)] = "email" placeholder="Email" required>
+        </div>      
+        <div class="row">
+            <p>Identifiant</p>
+            <input [(ngModel)] = "login" placeholder="Identifiant" required>
+        </div>  
+        <div class="row">
+            <p>Mot de passe </p>
+            <input type="password" [(ngModel)] = "password" placeholder="Mot de passe" required>
+        </div>  
+        <p class="NotComplete" *ngIf="!formulaireValide()">{{message}}</p>
+        <button (click)="click ()" [disabled]="!formulaireValide()">Valider</button>
+    </div>
+</body>
+<body>
+    <div *ngIf="showRecapitulatif" class="Formulaire">
+        <h1>Recapitulatif</h1>
+        <app-data-summary [informationsClient]="informationsClient"></app-data-summary>
+    </div>
+</body>
+
+    
+    
+
+
