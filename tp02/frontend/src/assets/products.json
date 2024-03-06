@@ -1,0 +1,39 @@
+[
+    {
+      "id": "1",
+      "name": "Thé poussiere de printemp",
+      "category": "Thé",
+      "price": "11.99"
+    },
+    {
+      "id": "1",
+      "name": "Thé étoile de neige",
+      "category": "Thé",
+      "price": "11.99"
+    },
+    {
+      "id": "2",
+      "name": "Café du Sud",
+      "category": "Café",
+      "price": "11.29"
+    },
+    {
+      "id": "2",
+      "name": "Café du Nord",
+      "category": "Café",
+      "price": "17.10"
+    },
+    {
+      "id": "3",
+      "name": "Waluigi",
+      "category": "Machine",
+      "price": "230"
+    },
+    {
+      "id": "3",
+      "name": "Wario",
+      "category": "Machine",
+      "price": "230"
+    }
+  ]
+  

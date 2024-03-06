@@ -1,66 +1,77 @@
-<body>
-    <div class="Formulaire">
-        <h1>Formulaire </h1>
-        <div class="row">
-            <p>Nom</p>
-            <input [(ngModel)] = "nom" pattern="[A-Za-z]+" placeholder="Nom" required>
-        </div>
-        <div class="row">
-            <p>Prénom </p>
-            <input [(ngModel)] = "prenom" pattern="[A-Za-z]+" placeholder="Prenom" required>
-        </div>  
-        <div class="row">
-            <p>Civilité</p> 
-            <select id="civilite" [(ngModel)]="civilite" name="civilite" placeholder="Civilité" class="surface-input" required>
-                <option value="Monsieur">Monsieur</option>
-                <option value="Madame">Madame</option>
-                <option value="Autre">Autre</option>
-            </select>
-        </div>
-        <div class="row">
-            <p>Adresse </p>
-            <input [(ngModel)] = "adresse" placeholder="Adresse" required>
-        </div>  
-        <div class="row">
-            <p>Code postale</p>
-            <input [(ngModel)] = "cp" pattern="\d+" placeholder="Code postale" required>
-        </div>  
-        <div class="row">
-            <p>Ville</p>
-            <input [(ngModel)] = "ville" placeholder="Ville" required>
-        </div>  
-        <div class="row">
-            <p>Pays</p>
-            <input [(ngModel)] = "pays" placeholder="Pays" required>
-        </div>  
-        <div class="row">
-            <p>Téléphone</p>
-            <input [(ngModel)] = "tel" pattern="\d+" placeholder="Téléphone" required>
-        </div>  
-        <div class="row">
-            <p>Email</p>
-            <input [(ngModel)] = "email" placeholder="Email" required>
-        </div>      
-        <div class="row">
-            <p>Identifiant</p>
-            <input [(ngModel)] = "login" placeholder="Identifiant" required>
-        </div>  
-        <div class="row">
-            <p>Mot de passe </p>
-            <input type="password" [(ngModel)] = "password" placeholder="Mot de passe" required>
-        </div>  
-        <p class="NotComplete" *ngIf="!formulaireValide()">{{message}}</p>
-        <button (click)="click ()" [disabled]="!formulaireValide()">Valider</button>
+<div class="container bg-white rounded-lg font-sans text-gray-800 mx-auto p-5 mt-10 mb-10 w-1/4">
+    <div class="container shadow-lg mx-auto p-8 rounded-lg">
+        <h1 class="text-3xl font-semibold mb-4 text-center">Formulaire</h1>
+
+            <div class="mb-4">
+                <label for="nom" class="block mb-1">Nom</label>
+                <input id="nom" type="text" [(ngModel)]="nom" pattern="[A-Za-z]+" placeholder="Nom" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="prenom" class="block mb-1">Prénom</label>
+                <input id="prenom" type="text" [(ngModel)]="prenom" pattern="[A-Za-z]+" placeholder="Prénom" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="civilite" class="block mb-1">Civilité</label>
+                <select id="civilite" [(ngModel)]="civilite" name="civilite" placeholder="Civilité" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+                    <option value="Monsieur">Monsieur</option>
+                    <option value="Madame">Madame</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="adresse" class="block mb-1">Adresse</label>
+                <input id="adresse" type="text" [(ngModel)]="adresse" placeholder="Adresse" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="cp" class="block mb-1">Code postal</label>
+                <input id="cp" type="text" [(ngModel)]="cp" pattern="\d+" placeholder="Code postal" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="ville" class="block mb-1">Ville</label>
+                <input id="ville" type="text" [(ngModel)]="ville" placeholder="Ville" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="pays" class="block mb-1">Pays</label>
+                <input id="pays" type="text" [(ngModel)]="pays" placeholder="Pays" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="tel" class="block mb-1">Téléphone</label>
+                <input id="tel" type="tel" [(ngModel)]="tel" pattern="\d+" placeholder="Téléphone" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block mb-1">Email</label>
+                <input id="email" type="email" [(ngModel)]="email" placeholder="Email" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="login" class="block mb-1">Identifiant</label>
+                <input id="login" type="text" [(ngModel)]="login" placeholder="Identifiant" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block mb-1">Mot de passe</label>
+                <input id="password" type="password" [(ngModel)]="password" placeholder="Mot de passe" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-800">
+            </div>
+
+            <div class="flex justify-center mb-4">
+                <div *ngIf="!formulaireValide()">
+                    <p class="text-red-500 font-semibold">{{message}}</p>
+                </div>
+            </div> 
+            <div class="flex justify-center mb-4">
+                <button (click)="click()" [disabled]="!formulaireValide()" class="bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-4">Valider</button>
+            </div>
     </div>
-</body>
-<body>
-    <div *ngIf="showRecapitulatif" class="Formulaire">
-        <h1>Recapitulatif</h1>
+
+    <div *ngIf="showRecapitulatif" class="container shadow-lg mx-auto p-8 mt-8">
+        <h1 class="text-3xl font-semibold mb-4 text-center">Récapitulatif</h1>
         <app-data-summary [informationsClient]="informationsClient"></app-data-summary>
     </div>
-</body>
-
-    
-    
-
-

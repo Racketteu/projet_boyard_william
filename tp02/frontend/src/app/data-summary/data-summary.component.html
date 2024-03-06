@@ -1,20 +1,81 @@
-<div>
-  <p>Nom: {{ informationsClient?.nom }}</p>
-  <p>Prénom: {{ informationsClient?.prenom }}</p>
-  <p>civilite: {{ informationsClient?.civilite }}</p>
+<div class="container mx-auto p-8">
+ 
+  <div class="space-y-4">
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Nom</h2>
+              <p class="text-gray-600">{{ informationsClient?.nom }}</p>
+          </div>
+      </div>
 
-  <p>Adresse: {{ informationsClient?.adresse }}</p>
-  <p>cp: {{ informationsClient?.cp }}</p>
-  <p>ville: {{ informationsClient?.ville }}</p>
-  <p>pays: {{ informationsClient?.pays }}</p>
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Prénom</h2>
+              <p class="text-gray-600">{{ informationsClient?.prenom }}</p>
+          </div>
+      </div>
 
-  <p>tel: {{ informationsClient?.tel }}</p>
-  <p>email: {{ informationsClient?.email }}</p>
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Civilité</h2>
+              <p class="text-gray-600">{{ informationsClient?.civilite }}</p>
+          </div>
+      </div>
 
-  <p>login: {{ informationsClient?.login }}</p>
-  <p>password: {{ informationsClient?.password }}</p>
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Adresse</h2>
+              <p class="text-gray-600">{{ informationsClient?.adresse }}</p>
+          </div>
+      </div>
 
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Code postal</h2>
+              <p class="text-gray-600">{{ informationsClient?.cp }}</p>
+          </div>
+      </div>
 
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Ville</h2>
+              <p class="text-gray-600">{{ informationsClient?.ville }}</p>
+          </div>
+      </div>
 
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Pays</h2>
+              <p class="text-gray-600">{{ informationsClient?.pays }}</p>
+          </div>
+      </div>
 
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Téléphone</h2>
+              <p class="text-gray-600">{{ informationsClient?.tel }}</p>
+          </div>
+      </div>
+
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Email</h2>
+              <p class="text-gray-600">{{ informationsClient?.email }}</p>
+          </div>
+      </div>
+
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Identifiant</h2>
+              <p class="text-gray-600">{{ informationsClient?.login }}</p>
+          </div>
+      </div>
+
+      <div class="bg-white rounded-lg overflow-hidden">
+          <div class="p-4">
+              <h2 class="text-lg font-semibold mb-2">Mot de passe</h2>
+              <p class="text-gray-600">{{ informationsClient?.password }}</p>
+          </div>
+      </div>
+  </div>
 </div>
