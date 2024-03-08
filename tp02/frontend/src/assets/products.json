@@ -1,39 +1,63 @@
 [
     {
-      "id": "1",
-      "name": "Thé poussiere de printemp",
+      "name": "Équinoxe des Feuilles",
       "category": "Thé",
-      "price": "11.99"
+      "price": "11.99",
+      "imageURL":"../../assets/Products/TheAutomne.png"
     },
     {
-      "id": "1",
-      "name": "Thé étoile de neige",
+      "name": "Lumière de l'Aube",
       "category": "Thé",
-      "price": "11.99"
+      "price": "11.99",
+      "imageURL":"../../assets/Products/ThePrintemps.png"
     },
     {
-      "id": "2",
-      "name": "Café du Sud",
-      "category": "Café",
-      "price": "11.29"
+      "name": "Nébuleuse des Tropiques",
+      "category": "Thé",
+      "price": "11.99",
+      "imageURL":"../../assets/Products/TheEte.png"
     },
     {
-      "id": "2",
+      "name": "Étoile des neiges",
+      "category": "Thé",
+      "price": "11.99",
+      "imageURL":"../../assets/Products/TheHiver.png"
+    },
+    {
       "name": "Café du Nord",
       "category": "Café",
-      "price": "17.10"
+      "price": "13.99",
+      "imageURL":"../../assets/Products/CafeNord.png"
     },
     {
-      "id": "3",
-      "name": "Waluigi",
-      "category": "Machine",
-      "price": "230"
+      "name": "Café du Sud",
+      "category": "Café",
+      "price": "13.99",
+      "imageURL":"../../assets/Products/CafeSud.png"
     },
     {
-      "id": "3",
-      "name": "Wario",
+      "name": "Café de l'Est",
+      "category": "Café",
+      "price": "13.99",
+      "imageURL":"../../assets/Products/CafeEst.png"
+    },
+    {
+      "name": "Café de l'Ouest",
+      "category": "Café",
+      "price": "13.99",
+      "imageURL":"../../assets/Products/CafeOuest.png"
+    },
+    {
+      "name": "Machine à café Waluigi",
       "category": "Machine",
-      "price": "230"
+      "price": "299.99",
+      "imageURL":"../../assets/Products/MachineWaluigi.png"
+    },
+    {
+      "name": "Machine à café Wario",
+      "category": "Machine",
+      "price": "299.99",
+      "imageURL":"../../assets/Products/MachineWario.png"
     }
-  ]
+]
   
