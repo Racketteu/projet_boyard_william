@@ -4,12 +4,13 @@ import { ApiproductService } from '../apiproduct.service';
 import { CoffeeProduct } from '../model/CoffeeProduct';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { FiltrageComponent } from '../filtrage/filtrage.component';
 
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css'],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FiltrageComponent],
   standalone: true
 })
 
@@ -20,18 +21,8 @@ export class ListeComponent implements OnInit {
   constructor(private apiService: ApiproductService) { }
 
   ngOnInit() {
-    this.coffeeProducts = this.apiService.getCoffeeProduct();
-    this.coffeeProducts.subscribe(products => {
-      this.filteredProducts = products;
+    this.apiService.coffeeProductsFiltered.subscribe(filteredProducts => {
+      this.filteredProducts = filteredProducts;
     });
   }
-
-  filterProducts(event: any) {
-    const searchText: string = event.target.value;
-    this.coffeeProducts.subscribe(products => {
-      this.filteredProducts = products.filter(product =>
-        product.name.toLowerCase().includes(searchText.toLowerCase())
-      );
-    });
-  }  
 }

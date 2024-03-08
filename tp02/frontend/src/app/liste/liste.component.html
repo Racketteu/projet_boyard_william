@@ -1,7 +1,6 @@
 <div>
-  <input type="text" placeholder="Rechercher un produit..." (input)="filterProducts($event)">
+  <app-filtrage></app-filtrage>
 </div>
-
 <div class="flex flex-wrap">
   <ng-container *ngFor="let product of filteredProducts">
     <div class="w-full md:w-1/3 px-4 mb-4">

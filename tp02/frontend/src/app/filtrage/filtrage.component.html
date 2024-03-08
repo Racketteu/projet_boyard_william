@@ -1,0 +1,15 @@
+<div class="flex flex-col items-center justify-center mt-6">
+    <input type="text" [(ngModel)]="searchName" placeholder="Barre de Recherche" (input)="filterByCriteria()"
+      class="w-full md:w-3/4 lg:w-1/2 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+  
+    <div class="flex items-center justify-center gap-4 mt-4">
+      <p class="mb-4 text-gray-600">Min</p>
+      <input type="number" [(ngModel)]="minPrice" placeholder="Prix Min" (input)="filterByCriteria()"
+        class="w-32 mb-4 rounded-full px-4 py-1 border border-gray-300 focus:outline-none focus:border-blue-500 appearance-none">
+  
+      <p class="mb-4 text-gray-600">Max</p>
+      <input type="number" [(ngModel)]="maxPrice" placeholder="Prix Max" (input)="filterByCriteria()" 
+        class="w-32 mb-4 rounded-full px-4 py-1 border border-gray-300 focus:outline-none focus:border-blue-500 appearance-none">
+    </div>
+  </div>
+  
