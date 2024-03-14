@@ -1,0 +1,28 @@
+<form [formGroup]="form" class="card-form" (ngSubmit)="onSubmit()">
+  <div class="flex flex-col items-center justify-center mt-6">
+    <input type="text" id="nom" formControlName="nom" placeholder="Nom sur la carte"
+      class="w-full md:w-3/4 lg:w-1/2 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+
+    <input type="text" id="code" formControlName="code" placeholder="Numéro de carte"
+      class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+
+    <input type="text" id="ccv" formControlName="ccv" placeholder="CCV"
+      class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+
+    <input type="text" id="mois" formControlName="mois" placeholder="Mois d'expiration"
+      class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+
+    <input type="text" id="annee" formControlName="annee" placeholder="Année d'expiration"
+      class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+
+    <button type="submit" class="w-1/4 mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+      Valider
+    </button>
+  </div>
+</form>
+
+<app-carteliste></app-carteliste>
+
+
+
+  
