@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, BehaviorSubject, switchMap, map } from 'rxjs';
-import { CoffeeProduct } from './model/CoffeeProduct';
-import { environment } from './environments/environments';
+import { CoffeeProduct } from '../model/CoffeeProduct';
+import { environment } from '../environments/environments';
 
 @Injectable({
   providedIn: 'root'

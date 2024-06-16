@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CarteserviceService } from '../../carteservice.service';
+import { CarteserviceService } from '../../service/carteservice.service';
 import { CommonModule } from '@angular/common';
 import { CartelisteComponent } from '../carteliste/carteliste.component'
 
@@ -23,8 +23,8 @@ export class PaiementComponent implements OnInit {
       nom: ['', Validators.required],
       code: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
       ccv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]],
-      mois: ['', Validators.required],
-      annee: ['', Validators.required],
+      mois: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]],
+      annee: ['', [Validators.required,  Validators.minLength(1), Validators.maxLength(2)]],
     });
   }
 

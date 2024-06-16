@@ -1,0 +1,52 @@
+<div class="flex items-center justify-center min-h-screen ">
+    <div class="w-full max-w-md bg-gray-100 p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 text-center">Connexion</h2>
+      <form (ngSubmit)="login()">
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="userName">
+            Nom d'utilisateur
+          </label>
+          <input
+            type="text"
+            id="userName"
+            [(ngModel)]="userName"
+            name="userName"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="password">
+            Mot de passe
+          </label>
+          <input
+            type="password"
+            id="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="inline-flex items-center">
+            <input
+              type="checkbox"
+              [(ngModel)]="rememberMe"
+              name="rememberMe"
+              class="form-checkbox"
+            />
+            <span class="ml-2">Se souvenir de moi</span>
+          </label>
+        </div>
+        <div class="mb-4 text-red-500" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+        <div class="flex items-center justify-between">
+          <button type="submit" class="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300"> Se connecter </button>
+        </div>
+        <a routerLink="/register" class="font-bold hover:text-blue-700">Inscrivez-vous</a>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,106 @@
+<div class="flex items-center justify-center min-h-screen ">
+    <div class="w-full max-w-md bg-gray-100 p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 text-center mt-8">Inscription</h2>
+      <form (ngSubmit)="register()">
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="Email">
+            Email
+          </label>
+          <input
+            type="email"
+            id="Email"
+            [(ngModel)]="Email"
+            name="Email"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="Password">
+            Mot de passe
+          </label>
+          <input
+            type="password"
+            id="Password"
+            [(ngModel)]="Password"
+            name="Password"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="ConfirmPassword">
+            Confirmer mot de passe
+          </label>
+          <input
+            type="password"
+            id="ConfirmPassword"
+            [(ngModel)]="ConfirmPassword"
+            name="ConfirmPassword"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="FirstName">
+            Prénom
+          </label>
+          <input
+            type="text"
+            id="FirstName"
+            [(ngModel)]="FirstName"
+            name="FirstName"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="LastName">
+            Nom
+          </label>
+          <input
+            type="text"
+            id="LastName"
+            [(ngModel)]="LastName"
+            name="LastName"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="PhoneNumber">
+            Numéro de téléphone
+          </label>
+          <input
+            type="text"
+            id="PhoneNumber"
+            [(ngModel)]="PhoneNumber"
+            name="PhoneNumber"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-black text-sm font-bold mb-2" for="UserName">
+            Nom d'utilisateur
+          </label>
+          <input
+            type="text"
+            id="UserName"
+            [(ngModel)]="UserName"
+            name="UserName"
+            required
+            class="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+        <div class="mb-4 text-red-500" *ngIf="ErrorMessage">
+          {{ ErrorMessage }}
+        </div>
+        <div class="flex items-center justify-between">
+          <button type="submit" class="bg-gray-700 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">S'inscrire</button>
+        </div>
+        <a routerLink="/signin" class="font-bold hover:text-blue-700">Vous avez déjà un compte</a>
+      </form>
+    </div>
+  </div>
+  

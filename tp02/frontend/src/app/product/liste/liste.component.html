@@ -18,7 +18,7 @@
           <p class="text-sm text-gray-600">{{ product.price }}€</p>
         </div>
         <div class="mt-4 flex justify-center items-center">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button (click)="addToCart(product)" class="bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300">
             Ajouter dans le panier
           </button>
         </div>

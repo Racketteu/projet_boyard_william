@@ -2,18 +2,37 @@
   <div class="flex flex-col items-center justify-center mt-6">
     <input type="text" id="nom" formControlName="nom" placeholder="Nom sur la carte"
       class="w-full md:w-3/4 lg:w-1/2 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+    <div *ngIf="form.get('nom')?.invalid && (form.get('nom')?.dirty || form.get('nom')?.touched)" class="text-red-600">
+      <span *ngIf="form.get('nom')?.errors?.['required']">Le nom est requis.</span>
+    </div>
 
     <input type="text" id="code" formControlName="code" placeholder="Numéro de carte"
       class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+    <div *ngIf="form.get('code')?.invalid && (form.get('code')?.dirty || form.get('code')?.touched)" class="text-red-600">
+      <span *ngIf="form.get('code')?.errors?.['required']">Le numéro de carte est requis.</span>
+      <span *ngIf="form.get('code')?.errors?.['minlength'] || form.get('code')?.errors?.['maxlength']">Le numéro de carte doit contenir 16 chiffres.</span>
+    </div>
 
     <input type="text" id="ccv" formControlName="ccv" placeholder="CCV"
       class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+    <div *ngIf="form.get('ccv')?.invalid && (form.get('ccv')?.dirty || form.get('ccv')?.touched)" class="text-red-600">
+      <span *ngIf="form.get('ccv')?.errors?.['required']">Le CCV est requis.</span>
+      <span *ngIf="form.get('ccv')?.errors?.['minlength'] || form.get('ccv')?.errors?.['maxlength']">Le CCV doit contenir 3 chiffres.</span>
+    </div>
 
     <input type="text" id="mois" formControlName="mois" placeholder="Mois d'expiration"
       class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+    <div *ngIf="form.get('mois')?.invalid && (form.get('mois')?.dirty || form.get('mois')?.touched)" class="text-red-600">
+      <span *ngIf="form.get('mois')?.errors?.['required']">Le mois d'expiration est requis.</span>
+      <span *ngIf="form.get('mois')?.errors?.['minlength'] || form.get('mois')?.errors?.['maxlength']">Le mois d'expiration doit être un nombre entre 1 et 2 chiffres.</span>
+    </div>
 
     <input type="text" id="annee" formControlName="annee" placeholder="Année d'expiration"
       class="w-full md:w-3/4 lg:w-1/2 mt-4 rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500">
+    <div *ngIf="form.get('annee')?.invalid && (form.get('annee')?.dirty || form.get('annee')?.touched)" class="text-red-600">
+      <span *ngIf="form.get('annee')?.errors?.['required']">L'année d'expiration est requise.</span>
+      <span *ngIf="form.get('annee')?.errors?.['minlength'] || form.get('annee')?.errors?.['maxlength']">L'année d'expiration doit être un nombre entre 1 et 2 chiffres.</span>
+    </div>
 
     <button type="submit" class="w-1/4 mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
       Valider
@@ -22,7 +41,3 @@
 </form>
 
 <app-carteliste></app-carteliste>
-
-
-
-  

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, input } from '@angular/core';
-import { CarteserviceService } from '../../carteservice.service';
+import { CarteserviceService } from '../../service/carteservice.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ApiproductService } from '../apiproduct.service';
+import { ApiproductService } from '../../service/apiproduct.service';
 
 @Component({
   selector: 'app-filtrage',
