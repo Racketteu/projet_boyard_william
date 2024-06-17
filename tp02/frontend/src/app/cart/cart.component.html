@@ -1,20 +1,28 @@
-<div class="p-4 shadow-lg rounded-lg">
+<div class="p-4 shadow-lg rounded-lg min-h-screen">
   <h2 class="text-lg font-semibold mb-4 text-center">Votre Panier</h2>
-  <div *ngIf="items.length === 0" class="text-gray-600 text-center mb-4">
+  <div *ngIf="items.length === 0" class="text-gray-600 text-center">
     Votre panier est vide.
   </div>
-  <div *ngFor="let item of items" class="mx-auto my-5 p-4 shadow-lg rounded-lg w-full md:w-2/3">
+  <div *ngFor="let item of items" class="mx-40 my-5 p-4 shadow-lg rounded-lg">
     <div class="flex justify-between items-center">
       <div class="flex items-center">
         <img [src]="item.imageURL" alt="{{ item.name }}" class="w-16 h-16 rounded-lg">
         <div class="ml-4">
           <p class="text-lg font-semibold">{{ item.name }}</p>
-          <p class="text-sm text-gray-600">{{ item.price }}€</p>
+          <p class="text-sm text-gray-600">{{ item.price }}€ x {{ item.quantity }}</p> <!-- Affichage de la quantité -->
         </div>
       </div>
-      <button (click)="removeFromCart(item)" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-700 transition duration-300">
-        Supprimer
-      </button>
+      <div class="flex items-center">
+        <button (click)="removeFromCart(item)" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-700 transition duration-300">
+          Supprimer
+        </button>
+        <button (click)="addToCart(item)" class="bg-blue-500 text-white px-4 py-2 ml-2 rounded-full hover:bg-blue-700 transition duration-300">
+          Ajouter
+        </button>
+      </div>
     </div>
+  </div>
+  <div class="text-center mt-4">
+    <p class="text-lg font-semibold">Total: {{ formatCurrency(total) }}</p>
   </div>
 </div>

@@ -3,5 +3,6 @@ export interface CoffeeProduct {
     category: string;
     price: number;
     imageURL : string;
+    quantity: number;
   }
   

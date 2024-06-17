@@ -24,11 +24,16 @@ export class ListeComponent implements OnInit {
   ngOnInit() {
     this.apiService.coffeeProductsFiltered.subscribe(filteredProducts => {
       this.filteredProducts = filteredProducts;
+      this.filteredProducts.forEach(product => product.quantity = 1);
     });
   }
   
   addToCart(product: CoffeeProduct) : void {
-    this.cartService.addItem(product);
-    console.log(`${product.name} ajouté au panier.`);
+    if (product.quantity && product.quantity > 0) { 
+      this.cartService.addItem(product);
+      console.log(`${product.name} (${product.quantity}) ajouté au panier.`);
+    } else {
+      console.error('La quantité du produit doit être supérieure à zéro.');
+    }
   }
 }
