@@ -6,8 +6,9 @@ import { BehaviorSubject, Observable, map, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private urlRegister = 'http://localhost:1664/login/register';
-  private urlLogin = 'http://localhost:1664/login/signup'; // Endpoint de connexion
+  private urlRegister = '/api/login/register';
+  private urlLogin = '/api/login/signup'; 
+  private urlGetUser = '/api/login/get-user';
 
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
@@ -33,6 +34,17 @@ export class AuthService {
         console.log('Login response:', response);
       }),
       map(response => response.token)
+    );
+  }
+
+  getUser(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get<any>(this.urlGetUser, {
+      headers: { Authorization: `Bearer ${token}` }
+    }).pipe(
+      tap(response => {
+        console.log('Get User response:', response);
+      })
     );
   }
 

@@ -2,8 +2,7 @@ const { Product } = require('../models/index');
 
 exports.get = async (req, res) => {
   try {
-    const products = await Product.findAll();
-    res.setHeader('Content-Type', 'application/json');      
+    const products = await Product.findAll();    
     res.send(products);
   } catch (error) {
     console.error(error);

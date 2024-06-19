@@ -13,5 +13,6 @@ export const routes: Routes = [
     {path: 'accueil', component: AccueilComponent},
     {path: 'liste', component: ListeComponent},
     {path: 'paiement', component: PaiementComponent},
-    {path: 'panier', component: CartComponent}
+    {path: 'panier', component: CartComponent},
+    {path : '', component: AccueilComponent}
 ];

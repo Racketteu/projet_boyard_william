@@ -11,7 +11,7 @@ import { environment } from '../environments/environments';
 
 export class ApiproductService {
   private filterCriteria = new BehaviorSubject<{minPrice?: number, maxPrice?: number, searchName?: string}>({});
-  private UrlProduct = 'http://localhost:1664/product';
+  private UrlProduct = '/api/product';
 
   constructor(private http: HttpClient) { }
 
