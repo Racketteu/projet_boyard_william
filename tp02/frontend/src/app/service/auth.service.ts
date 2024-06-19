@@ -6,70 +6,44 @@ import { BehaviorSubject, Observable, map, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrlLogin = 'https://localhost:7023/api/Login/login';
-  private apiUrlLogout = 'https://localhost:7023/api/Login/logout';
-  private apiUrlRegister = 'https://localhost:7023/api/Login/register';
-  private ApiUrlUser = 'https://localhost:7023/api/Users/'
-  
+  private urlRegister = 'http://localhost:1664/login/register';
+  private urlLogin = 'http://localhost:1664/login/signup'; // Endpoint de connexion
 
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
-  private userId: string | null = null;
-
   constructor(private http: HttpClient) {}
 
-  login(userName: string, password: string, rememberMe: boolean): Observable<any> {
-    const loginData = {
-      userName: userName,
-      password: password,
-      rememberMe: rememberMe
-    };
-    return this.http.post<any>(this.apiUrlLogin, loginData)
-    .pipe(
+  register(user: { username: string; email: string; password: string }): Observable<any> {
+    return this.http.post<any>(this.urlRegister, user).pipe(
       tap(response => {
-        if (response) {
-          this.userId = response.userId;
-          this.isLoggedInSubject.next(true);
-        }
+        console.log('Register response:', response);
       })
     );
   }
 
-  register(registerData: {
-    email: string;
-    password: string;
-    confirmPassword: string;
-    firstName: string;
-    lastName: string;
-    phoneNumber: string;
-    userName: string;
-    normalizedEmail: string;
-    normalizedUserName: string;
-  }): Observable<any> {
-    return this.http.post<any>(this.apiUrlRegister, registerData)
-      .pipe(
-        tap(response => {
-          if (response && response.userId) {
-            this.userId = response.userId;
-            this.isLoggedInSubject.next(true);
-          }
-        })
-      );
-  }
-
-  getUserId(): string | null {
-    return this.userId;
-  }
-
-  getUserInfo(): Observable<any> {
-    const url = `https://localhost:7023/api/Users/${this.userId}`;
-    return this.http.get<any>(url);
+  login(credentials: { username : string ; password: string }): Observable<any> {
+    return this.http.post<any>(this.urlLogin, credentials).pipe(
+      tap(response => {
+        const token = response.token; 
+        this.isLoggedInSubject.next(true); 
+        if (token) {
+          localStorage.setItem('token', token);
+        }
+        console.log('Login response:', response);
+      }),
+      map(response => response.token)
+    );
   }
 
   logout() {
-    this.userId = null;
+    localStorage.removeItem('token');
     this.isLoggedInSubject.next(false);
-    return this.http.post(this.apiUrlLogout, null);
+  }
+
+  // Méthode pour vérifier si l'utilisateur est connecté
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token; // Retourne vrai si le token existe, faux sinon
   }
 }

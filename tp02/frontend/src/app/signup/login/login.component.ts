@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../Service/auth.service';
+import { AuthService } from '../../service/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
@@ -12,24 +12,25 @@ import { RouterModule, Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  userName: string = '';
+  username: string = '';
   password: string = '';
   rememberMe: boolean = false;
   errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
-  
+
   login() {
-    this.authService.login(this.userName, this.password, this.rememberMe).subscribe(
-      response => {
-        console.log('Login successful', response);
-        this.router.navigate(['/sportbet']); 
-      },
-      error => {
-        console.error('Login failed', error);
-        this.errorMessage = 'Login failed. Please check your credentials.';
-      }
-    );
+    this.authService.login({ username : this.username, password: this.password })
+      .subscribe(
+        () => {
+          // Rediriger vers une page après la connexion réussie
+          this.router.navigate(['/accueil']);
+        },
+        error => {
+          this.errorMessage = 'Identifiants incorrects. Veuillez réessayer.';
+          console.error('Login error:', error);
+        }
+      );
   }
 }
 

@@ -11,13 +11,14 @@ import { environment } from '../environments/environments';
 
 export class ApiproductService {
   private filterCriteria = new BehaviorSubject<{minPrice?: number, maxPrice?: number, searchName?: string}>({});
+  private UrlProduct = 'http://localhost:1664/product';
 
   constructor(private http: HttpClient) { }
 
   get coffeeProductsFiltered(): Observable<CoffeeProduct[]> {  
     return this.filterCriteria.pipe(
       switchMap(criteria => 
-        this.http.get<CoffeeProduct[]>(environment.backendClient).pipe(
+        this.http.get<CoffeeProduct[]>(this.UrlProduct).pipe(
           map(products => products.filter(product => 
             (!criteria.minPrice || product.price >= criteria.minPrice) &&
             (!criteria.maxPrice || product.price <= criteria.maxPrice) &&

@@ -5,8 +5,9 @@
         <a routerLink="/liste" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out">Produits</a>
     </nav>
     <div class="flex items-center">
-        <a routerLink="/signup" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out ml-4">Connexion</a>
-        <a routerLink="/paiement" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out ml-4">Carte</a>
-        <a routerLink="/panier" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out ml-4">Panier</a>
+        <a *ngIf="!isLoggedIn" routerLink="/signup" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out ml-4">Connexion</a>
+        <a *ngIf="isLoggedIn" routerLink="/paiement" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out ml-4">Carte</a>
+        <a *ngIf="isLoggedIn" routerLink="/panier" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out ml-4">Panier</a>
+        <a *ngIf="isLoggedIn" (click)="logout()" class="text-gray-800 font-semibold hover:text-gray-600 transition duration-300 ease-in-out ml-4 cursor-pointer">Déconnexion</a>
     </div>
 </div>
